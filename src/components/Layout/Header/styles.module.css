@@ -1,0 +1,120 @@
+.root {
+  position: absolute;
+  width: calc(100% - 16.5rem);
+  top: 0;
+  z-index: 1;
+  padding: 0.875rem 1rem 0.875rem 1.5rem;
+  border-bottom: 1px solid var(--gray-pale);
+  background: var(--white);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+.root .role-label {
+  color: var(--blue-deep);
+  font-family: Poppins, Arial, Helvetica, sans-serif;
+  font-size: 1.75rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.root .profile-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  user-select: none;
+}
+.root .profile-container .profile {
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  align-items: center;
+  padding-right: 0.5rem;
+  gap: 1.5rem;
+}
+.root .profile-container .profile .status-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+}
+.root .profile-container .profile .status-wrapper .status {
+  width: 2.8125rem;
+  height: 2.8125rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: var(--gray-lightest);
+  border: 1px solid var(--gray-softer);
+}
+.root .profile-container .profile .status-wrapper .name {
+  color: var(--navy-dark);
+  font-feature-settings: "liga" off, "clig" off;
+  font-family: Poppins, Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; /* 1.5rem */
+}
+.root .profile-container .profile .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.root .profile-container .profile .icon svg {
+  transition: all 0.3s ease-out;
+  max-width: 1.25rem !important;
+  min-width: 1.25rem !important;
+}
+.root .profile-container .profile .active-icon svg {
+  transform: rotate(-180deg);
+}
+.root .profile-container .account {
+  min-width: 10rem;
+  box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.13);
+  background: var(--white);
+  position: absolute;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  top: 110%;
+  right: 0;
+  gap: 0.5rem;
+  z-index: 1;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.1s ease-out;
+  border: 1px solid var(--gray-softer);
+}
+.root .profile-container .account .logout {
+  padding: 0.5rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+}
+.root .profile-container .account .logout span {
+  color: var(--red);
+  text-align: center;
+  font-family: Poppins, Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.root .profile-container .account .logout svg path {
+  fill: var(--red) !important;
+}
+.root .profile-container .active-account {
+  opacity: 1;
+  visibility: visible;
+}
+
+/*# sourceMappingURL=styles.module.css.map */

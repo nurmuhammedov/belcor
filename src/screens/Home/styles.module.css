@@ -1,0 +1,43 @@
+.root {
+  display: grid;
+  grid-template-columns: repeat(20, 1fr);
+}
+.root .child {
+  border: 1px solid var(--gray-pale);
+  grid-column-end: span 1;
+  aspect-ratio: 1/1;
+  padding: 0.3rem;
+  position: relative;
+}
+.root .child .active-child {
+  width: 100%;
+  height: 100%;
+  background-color: var(--primary-blue);
+}
+.root .child .sample {
+  width: 50%;
+  height: 50%;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--yellow-bright);
+}
+
+@keyframes blink {
+  0% {
+    background-color: var(--primary-blue);
+  }
+  50% {
+    background-color: var(--primary-blue);
+  }
+  100% {
+    background-color: var(--primary-blue);
+  }
+}
+.active-blink {
+  animation: blink 0.5s ease-in-out;
+}
+
+/*# sourceMappingURL=styles.module.css.map */

@@ -1,0 +1,76 @@
+.root {
+  display: grid;
+  grid-template-columns: repeat(20, 1fr);
+
+  .child {
+    border: 1px solid var(--gray-pale);
+    grid-column-end: span 1;
+    aspect-ratio: 1/1;
+    padding: .3rem;
+    position: relative;
+
+    span {
+      font-family: Poppins, Arial, Helvetica, sans-serif;
+      font-size: .8rem;
+      font-style: normal;
+      top: .4rem;
+      right: 0.5rem;
+      font-weight: normal;
+      position: absolute;
+      line-height: normal;
+      color: var(--gray-medium);
+      z-index: 2;
+    }
+
+    .active-child {
+      width: 100%;
+      height: 100%;
+      background-color: var(--primary-blue);
+    }
+
+    .active-child + span {
+      color: var(--white);
+    }
+
+    .sample {
+      width: 50%;
+      height: 50%;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: var(--yellow-bright);
+      font-family: Poppins, Arial, Helvetica, sans-serif;
+      font-size: .8rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-style: normal;
+      font-weight: normal;
+      line-height: normal;
+      color: var(--white);
+      z-index: 2;
+    }
+  }
+
+  .active-blink {
+    animation: blink 0.5s ease-in-out;
+
+    span {
+      color: var(--white);
+    }
+  }
+}
+
+@keyframes blink {
+  0% {
+    background-color: var(--primary-blue);
+  }
+  50% {
+    background-color: var(--primary-blue);
+  }
+  100% {
+    background-color: var(--primary-blue);
+  }
+}
