@@ -7,7 +7,7 @@ import {ROLE_LIST} from 'constants/roles'
 export const login = createAsyncThunk<IUser, { username: string; password: string }>(
 	'auth/login',
 	async (credentials, {rejectWithValue}) => {
-		return new Promise((resolve) => {
+		return new Promise((resolve, reject) => {
 			if (credentials.username === 'admin' && credentials.password === 'admin') {
 				const user: IUser = {fullName: 'Admin', role: ROLE_LIST.ADMIN}
 				setTimeout(() => {
@@ -19,6 +19,7 @@ export const login = createAsyncThunk<IUser, { username: string; password: strin
 				setTimeout(() => {
 					showMessage('Invalid credentials', 'error')
 					rejectWithValue(null)
+					reject('Invalid credentials')
 				}, 1000)
 			}
 		})
